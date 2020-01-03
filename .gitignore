@@ -1,0 +1,16 @@
+# Node
+node_modules/
+
+# Project build
+dist/
+build/
+
+# env
+.env
+
+# error logs
+yarn-error.log
+*.log
+
+# misc
+stats.json
