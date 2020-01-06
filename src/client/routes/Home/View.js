@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Heading, Spinner, IconButton, useColorMode } from '@chakra-ui/core';
 import { Helmet } from 'react-helmet-async';
 import SearchInput from '../../components/SearchInput';
-import TotalStats from '../../components/TotalStats';
+import TotalStats from '../../components/TotalStats/TotalStats';
 import SelectedPackages from '../../components/SelectedPackages';
 import Footer from '../../components/Footer';
 import { PackageSumContext } from '../../components/Layout/PackageSumProvider';

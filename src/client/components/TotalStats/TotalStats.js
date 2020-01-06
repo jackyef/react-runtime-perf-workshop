@@ -1,15 +1,28 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import {
   Flex,
   Stat,
   StatLabel,
   StatNumber,
-  StatHelpText,
   IconButton,
-  Spinner,
 } from '@chakra-ui/core';
+import { PackageSumContext } from '../Layout/PackageSumProvider';
 
-const TotalStats = ({ prettifiedSize, packagesCount, onOpen }) => {
+const TotalStats = () => {
+  const { totalSize, drawerDisclosure, packages } = useContext(
+    PackageSumContext,
+  );
+
+  const packagesCount = packages.length;
+  const onOpen = drawerDisclosure.open;
+
+  const prettifiedSize = useMemo(() => {
+    return `${totalSize / 1024}`
+      .split('.')
+      .map((v, i) => (i === 0 ? v : v.substring(0, 2)))
+      .join('.');
+  }, [totalSize]);
+
   return (
     <Stat
       as={Flex}
@@ -33,6 +46,4 @@ const TotalStats = ({ prettifiedSize, packagesCount, onOpen }) => {
   );
 };
 
-const MemoizedTotalStats = React.memo(TotalStats);
-
-export default MemoizedTotalStats;
+export default TotalStats;
