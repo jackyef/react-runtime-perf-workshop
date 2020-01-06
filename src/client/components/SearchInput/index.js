@@ -8,8 +8,19 @@ import {
   Spinner,
 } from '@chakra-ui/core';
 
+import getWorker from './heavyCalculation';
 import { PackageSumContext } from '../Layout/PackageSumProvider';
 import SearchResults from './SearchResults';
+
+let worker = null;
+
+const doHeavyCalculation = async () => {
+  if (!worker) {
+    worker = await getWorker();
+  }
+
+  return worker.doHeavyCalculation();
+}
 
 const SearchInput = () => {
   const [searchText, setSearchText] = useState('');
@@ -26,18 +37,28 @@ const SearchInput = () => {
   );
 
   const packageSum = useContext(PackageSumContext);
+  
+  const handleChange = async (e) => {
+    setSearchText('loading...');
+
+    const newSearchText = await doHeavyCalculation();
+    
+    console.log(newSearchText);
+    setSearchText(newSearchText);
+  }
 
   return (
     <div>
       <InputGroup>
         <Input
           type="text"
-          onChange={e => setSearchText(e.target.value)}
+          onChange={handleChange}
           aria-label="Search for packages on npm"
           placeholder="Search for packages on npm..."
         />
         <InputRightElement>{loading ? <Spinner /> : null}</InputRightElement>
       </InputGroup>
+      <span>{searchText}</span>
       <SearchResults
         data={data}
         loading={loading}
