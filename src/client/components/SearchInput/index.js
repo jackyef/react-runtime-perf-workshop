@@ -45,6 +45,7 @@ const SearchInput = () => {
         searchText={searchText}
         packages={packageSum.packages}
         onAdd={packageSum.add}
+        refetch={refetch}
       />
     </div>
   );

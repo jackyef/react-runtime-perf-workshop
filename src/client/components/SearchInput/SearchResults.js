@@ -7,7 +7,7 @@ import {
   ButtonGroup,
 } from '@chakra-ui/core';
 
-const SearchResults = ({ data, loading, error, searchText, packages, onAdd }) => {
+const SearchResults = ({ data, loading, error, searchText, packages, onAdd, refetch }) => {
   let content = null;
 
   if (!data && loading) {
