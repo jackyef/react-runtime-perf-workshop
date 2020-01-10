@@ -19,6 +19,7 @@ export default {
     filename: ifDev('[name].js','[name].[hash].js'),
     path: path.resolve(__dirname, '../dist/client'),
     publicPath: `http://${process.env.CLIENT_HOST}:${process.env.CLIENT_PORT}/`,
+    globalObject: 'this',
   },
   module: {
     ...sharedModule,
