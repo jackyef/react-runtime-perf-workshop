@@ -10,6 +10,18 @@ import {
 import { PackageSumContext } from '../Layout/PackageSumProvider';
 import SearchResults from './SearchResults';
 
+const doSomeHeavyStuffs = () => {
+  // eslint-disable-next-line
+  let a = 0;
+
+  // Loop 100M time! comment this out for now
+  // for (let i = 0; i < 100000000; i++) {
+  //   a++;
+  // }
+
+  return Math.random() * 100;
+}
+
 const SearchInput = () => {
   const [searchText, setSearchText] = useState('');
   const { data, error, loading, refetch } = useData(
@@ -26,12 +38,18 @@ const SearchInput = () => {
 
   const packageSum = useContext(PackageSumContext);
 
+  const handleChangeSearch = e => {
+    doSomeHeavyStuffs();
+
+    setSearchText(e.target.value)
+  }
+
   return (
     <div>
       <InputGroup>
         <Input
           type="text"
-          onChange={e => setSearchText(e.target.value)}
+          onChange={handleChangeSearch}
           aria-label="Search for packages on npm"
           placeholder="Search for packages on npm..."
         />
