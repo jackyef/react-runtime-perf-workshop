@@ -11,16 +11,16 @@ import { PackageSumContext } from '../Layout/PackageSumProvider';
 // let prevTotalSize;
 // let prevDrawerDisclosure;
 // let prevPackages;
-// let i = 0;
+let i = 0;
 
 const TotalStats = () => {
   const { totalSize, drawerDisclosure, packages } = useContext(
     PackageSumContext,
   );
 
-  // Uncomment this to see what is actually different from the context that causes re-render
-  // React.useEffect(() => {
-    // console.log('useEffect() called', i++);
+  React.useEffect(() => {
+    console.log('useEffect() called', i++);
+    // Uncomment these to see what is actually different from the context that causes re-render
     // console.log('prevTotalSize === totalSize', prevTotalSize === totalSize)
     // console.log('prevDrawerDisclosure === drawerDisclosure', prevDrawerDisclosure === drawerDisclosure)
     // console.log('prevPackages === packages', prevPackages === packages)
@@ -28,7 +28,7 @@ const TotalStats = () => {
     // prevTotalSize = totalSize;
     // prevDrawerDisclosure = drawerDisclosure;
     // prevPackages = packages;
-  // })
+  })
 
   const packagesCount = packages.length;
   const onOpen = drawerDisclosure.open;

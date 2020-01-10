@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { useData, createDataClient, DataProvider } from 'react-isomorphic-data';
+import { useData } from 'react-isomorphic-data';
 import {
   Input,
   InputGroup,
   InputRightElement,
-  Icon,
   Spinner,
 } from '@chakra-ui/core';
 
