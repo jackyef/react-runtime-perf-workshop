@@ -2693,19 +2693,20 @@ combined-stream@1.0.6, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-comlink-loader@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/comlink-loader/-/comlink-loader-1.1.0.tgz#77711b0aa16d916fafca96c8049a5ff7e9cbfefa"
-  integrity sha512-XrHEKyj+BcLdhAu+e6OLUrsOvNgCmmSUQWlx2hKaJzV3dbkSa/KdlNNnMzYX4WTuBQEqggUgYteugHrn+/lC6g==
+comlink-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/comlink-loader/-/comlink-loader-2.0.0.tgz#a1f4b59a6bdb9b774f4d51dd90324d3844a0ee62"
+  integrity sha512-106/k0JSssSCo2QO4ucbgbyWsb2zAEOSXFAVH2A+EO8kOz3n2BkvmkToxsoo+SWKUIKy8qubhAOLCS5mpFUvHw==
   dependencies:
-    comlinkjs "^2.4.1"
+    comlink "^4.2.0"
     loader-utils "^1.1.0"
+    slash "^3.0.0"
     worker-loader "^2.0.0"
 
-comlinkjs@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/comlinkjs/-/comlinkjs-2.4.1.tgz#db4d40edd477f8eef9a8a1b460844f41f5a6dcdb"
-  integrity sha512-nifSjuwsqqNg2vq1vcFuKhqclFUA1R0Fal0vjE/TDXqOlaG4h9XRe2MRe2Wy+5aHVzqK/pI+03U327j2hFn1Zg==
+comlink@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/comlink/-/comlink-4.2.0.tgz#be9e968a19d797a44a042cf1eac03775d2ed39fe"
+  integrity sha512-33hF3yYzZicIWLREuvluTGSZkbAXYwRmrA9IYQo0/P+0O45qgvzR0FHX4tRZztObFMTs/RhnN0G0UBNDAZSiCg==
 
 commander@2.15.x, commander@~2.15.0:
   version "2.15.1"
@@ -8888,6 +8889,11 @@ slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
+
+slash@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
+  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 slice-ansi@1.0.0:
   version "1.0.0"
