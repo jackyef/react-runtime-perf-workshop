@@ -31,7 +31,7 @@ const TotalStats = () => {
   })
 
   const packagesCount = packages.length;
-  const onOpen = drawerDisclosure.open;
+  const onOpen = drawerDisclosure.onOpen;
 
   const prettifiedSize = useMemo(() => {
     return `${totalSize / 1024}`
